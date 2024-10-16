@@ -1,10 +1,11 @@
+// server/server.js
 import express from 'express'
 import path from 'path'
 import favicon from 'serve-favicon'
 import dotenv from 'dotenv'
 
-// import the router from your routes file
-
+import optionsRoutes from './routes/optionsRoutes.js';
+import customCarsRoutes from './routes/customCarsRoutes.js';
 
 dotenv.config()
 
@@ -23,7 +24,8 @@ else if (process.env.NODE_ENV === 'production') {
 }
 
 // specify the api path for the server to use
-
+app.use('/api', optionsRoutes);
+app.use('/api', customCarsRoutes);
 
 if (process.env.NODE_ENV === 'production') {
     app.get('/*', (_, res) =>

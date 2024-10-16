@@ -1,3 +1,5 @@
+// client/src/App.jsx
+
 import React from 'react'
 import { useRoutes } from 'react-router-dom'
 import Navigation from './components/Navigation'
