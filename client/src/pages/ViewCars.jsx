@@ -1,51 +1,86 @@
-// client/src/pages/ViewCars.jsx
-
 import React, { useEffect, useState } from 'react';
-import { fetchAllCustomCars } from '../services/CustomCarsAPI';
-import { Link } from 'react-router-dom';
+import { fetchAllCustomCars, deleteCustomCar } from '../services/CustomCarsAPI';
+import { useNavigate } from 'react-router-dom';
+import '../css/ViewCars.css';
 
-const ViewCars = () => {
-  const [cars, setCars] = useState([]);
+const ViewAllCars = () => {
+  const [customCars, setCustomCars] = useState([]);
+  const [errorMessage, setErrorMessage] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const getCars = async () => {
+    const getCustomCars = async () => {
       try {
-        const data = await fetchAllCustomCars();
-        setCars(data);
+        const cars = await fetchAllCustomCars();
+        setCustomCars(cars);
       } catch (error) {
-        console.error('Error fetching cars:', error);
+        console.error('Error fetching custom cars:', error);
+        setErrorMessage('Failed to fetch custom cars.');
       }
     };
-    getCars();
+    getCustomCars();
   }, []);
 
-  if (cars.length === 0) {
-    return <p>No cars found.</p>;
-  }
+  const handleDelete = async (id) => {
+    if (!window.confirm('Are you sure you want to delete this car?')) {
+      return;
+    }
+
+    try {
+      await deleteCustomCar(id);
+      setCustomCars(customCars.filter((car) => car.id !== id));
+      alert('Car deleted successfully!');
+    } catch (error) {
+      console.error('Error deleting car:', error);
+      setErrorMessage('Failed to delete car.');
+    }
+  };
+
+  const handleEdit = (id) => {
+    navigate(`/edit/${id}`);
+  };
 
   return (
-    <div className="view-cars-container">
-      <h2>Your Custom Cars</h2>
+    <div className="view-all-cars-container">
+      <h2>All Custom Cars</h2>
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
       <div className="cars-grid">
-        {cars.map((car) => {
-          const totalPrice = parseFloat(car.total_price);
-          const priceDisplay = isNaN(totalPrice) ? 'N/A' : totalPrice.toFixed(2);
-
-          return (
-            <div key={car.id} className="car-card">
-              <h3>{car.name}</h3>
-              <p>Price: ${priceDisplay}</p>
-              <p>Exterior: {car.exterior_name}</p>
-              <p>Roof: {car.roof_name}</p>
-              <p>Wheels: {car.wheels_name}</p>
-              <p>Interior: {car.interior_name}</p>
-              <Link to={`/customcars/${car.id}`}>Details</Link>
+        {customCars.map((car) => (
+          <div key={car.id} className="car-card">
+            <h3>{car.name}</h3>
+            <p>Convertible: {car.is_convertible ? 'Yes' : 'No'}</p>
+            <p>Total Price: ${car.total_price.toFixed(2)}</p>
+            <div className="car-options">
+              <div className="option">
+                <img src={car.exterior_image} alt={car.exterior_name} />
+                <p>{car.exterior_name}</p>
+              </div>
+              <div className="option">
+                <img src={car.roof_image} alt={car.roof_name} />
+                <p>{car.roof_name}</p>
+              </div>
+              <div className="option">
+                <img src={car.wheels_image} alt={car.wheels_name} />
+                <p>{car.wheels_name}</p>
+              </div>
+              <div className="option">
+                <img src={car.interior_image} alt={car.interior_name} />
+                <p>{car.interior_name}</p>
+              </div>
             </div>
-          );
-        })}
+            <div className="car-actions">
+              <button onClick={() => handleEdit(car.id)} className="edit-button">
+                Edit
+              </button>
+              <button onClick={() => handleDelete(car.id)} className="delete-button">
+                Delete
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
 };
 
-export default ViewCars;
+export default ViewAllCars;

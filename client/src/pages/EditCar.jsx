@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { fetchCustomCarById, updateCustomCar } from '../services/CustomCarsAPI';
 import { fetchOptionsByCategory } from '../services/OptionsAPI';
-import OptionModal from './OptionModal';
+import OptionModal from '../components/OptionModal';
 import { validateIncompatibleOptions } from '../utilities/validation';
 
 const EditCar = () => {

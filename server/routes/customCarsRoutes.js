@@ -15,6 +15,6 @@ router.get('/customcars', getAllCustomCars);
 router.get('/customcars/:id', getCustomCarById);
 router.post('/customcars', createCustomCar);
 router.put('/customcars/:id', updateCustomCar);
-router.delete('/customcars/:id', deleteCustomCar);
+router.delete('/customcars/:id', deleteCustomCar); // Ensure this route exists
 
 export default router;

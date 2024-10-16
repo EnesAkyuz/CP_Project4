@@ -1,32 +1,33 @@
 // client/src/pages/CreateCar.jsx
+
 import React, { useState, useEffect } from 'react';
-import { fetchOptionsByCategory } from '../services/OptionsAPI';
+import { useNavigate } from 'react-router-dom';
 import { createCustomCar } from '../services/CustomCarsAPI';
-import OptionModal from "../pages/OptionModal.jsx";
+import { fetchOptionsByCategory } from '../services/OptionsAPI';
+import OptionModal from '../components/OptionModal';
 import { validateIncompatibleOptions } from '../utilities/validation';
 
 const CreateCar = () => {
+  const [carName, setCarName] = useState('');
   const [isConvertible, setIsConvertible] = useState(false);
-  const [options, setOptions] = useState({
-    Exterior: [],
-    Roof: [],
-    Wheels: [],
-    Interior: [],
-  });
   const [selectedOptions, setSelectedOptions] = useState({
     exterior_id: null,
     roof_id: null,
     wheels_id: null,
     interior_id: null,
   });
-  const [totalPrice, setTotalPrice] = useState(0);
-  const [carName, setCarName] = useState('');
+  const [options, setOptions] = useState({
+    Exterior: [],
+    Roof: [],
+    Wheels: [],
+    Interior: [],
+  });
   const [errorMessage, setErrorMessage] = useState('');
   const [showOptionModal, setShowOptionModal] = useState(null);
+  const navigate = useNavigate();
 
-  // Fetch options when isConvertible changes
   useEffect(() => {
-    const fetchOptions = async () => {
+    const getOptions = async () => {
       try {
         const categories = ['Exterior', 'Roof', 'Wheels', 'Interior'];
         const optionsData = {};
@@ -39,32 +40,11 @@ const CreateCar = () => {
         setOptions(optionsData);
       } catch (error) {
         console.error('Error fetching options:', error);
+        setErrorMessage('Failed to fetch options.');
       }
     };
-
-    fetchOptions();
+    getOptions();
   }, [isConvertible]);
-
-  // Update total price when selected options change
-  useEffect(() => {
-    const calculateTotalPrice = () => {
-      let price = 0;
-      for (const category in selectedOptions) {
-        const optionId = selectedOptions[category];
-        if (optionId) {
-          const option = Object.values(options)
-            .flat()
-            .find((opt) => opt.id === optionId);
-          if (option) {
-            price += parseFloat(option.price);
-          }
-        }
-      }
-      setTotalPrice(price);
-    };
-
-    calculateTotalPrice();
-  }, [selectedOptions, options]);
 
   const handleOptionSelect = (category, optionId) => {
     setSelectedOptions({ ...selectedOptions, [`${category.toLowerCase()}_id`]: optionId });
@@ -85,23 +65,23 @@ const CreateCar = () => {
       return;
     }
 
+    // Ensure all options are selected
+    const { exterior_id, roof_id, wheels_id, interior_id } = selectedOptions;
+    if (!exterior_id || !roof_id || !wheels_id || !interior_id) {
+      setErrorMessage('Please select options for all categories.');
+      return;
+    }
+
     try {
-      await createCustomCar({
+      const carData = {
         name: carName,
-        isConvertible,
+        is_convertible: isConvertible,
         ...selectedOptions,
-      });
+      };
+
+      await createCustomCar(carData);
       alert('Car created successfully!');
-      // Optionally reset form or redirect
-      setCarName('');
-      setSelectedOptions({
-        exterior_id: null,
-        roof_id: null,
-        wheels_id: null,
-        interior_id: null,
-      });
-      setTotalPrice(0);
-      setErrorMessage('');
+      navigate('/viewallcars');
     } catch (error) {
       console.error('Error creating car:', error);
       setErrorMessage('Failed to create car.');
@@ -110,11 +90,16 @@ const CreateCar = () => {
 
   return (
     <div className="create-car-container">
-      <h2>Customize Your Car</h2>
+      <h2>Create a New Car</h2>
       <form onSubmit={handleSubmit}>
         <label>
           Car Name:
-          <input type="text" value={carName} onChange={(e) => setCarName(e.target.value)} required />
+          <input
+            type="text"
+            value={carName}
+            onChange={(e) => setCarName(e.target.value)}
+            required
+          />
         </label>
         <label>
           Convertible:
@@ -138,7 +123,7 @@ const CreateCar = () => {
               {showOptionModal === category && (
                 <OptionModal
                   category={category}
-                  options={options[category]}
+                  options={options[category]} // Pass options to OptionModal
                   selectedOptionId={selectedOptions[`${category.toLowerCase()}_id`]}
                   onSelectOption={(optionId) => handleOptionSelect(category, optionId)}
                   onClose={() => setShowOptionModal(null)}
@@ -147,10 +132,6 @@ const CreateCar = () => {
               )}
             </div>
           ))}
-        </div>
-
-        <div className="price-counter">
-          <p>Total Price: ${totalPrice.toFixed(2)}</p>
         </div>
 
         {errorMessage && <p className="error-message">{errorMessage}</p>}

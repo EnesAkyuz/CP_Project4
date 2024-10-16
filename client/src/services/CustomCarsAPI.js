@@ -1,15 +1,13 @@
 // client/src/services/CustomCarsAPI.js
 
-const API_URL = '/api/customcars';
-
 export const fetchAllCustomCars = async () => {
   try {
-    const response = await fetch(API_URL);
+    const response = await fetch('/api/customcars');
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
-    const data = await response.json();
-    return data;
+    const cars = await response.json();
+    return cars;
   } catch (error) {
     console.error('Error fetching custom cars:', error);
     throw error;
@@ -18,7 +16,7 @@ export const fetchAllCustomCars = async () => {
 
 export const fetchCustomCarById = async (id) => {
   try {
-    const response = await fetch(`${API_URL}/${id}`);
+    const response = await fetch(`/api/customcars/${id}`);
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
@@ -32,7 +30,7 @@ export const fetchCustomCarById = async (id) => {
 
 export const createCustomCar = async (carData) => {
   try {
-    const response = await fetch(API_URL, {
+    const response = await fetch('/api/customcars', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -40,7 +38,8 @@ export const createCustomCar = async (carData) => {
       body: JSON.stringify(carData),
     });
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      const errorData = await response.json();
+      throw new Error(`Network response was not ok: ${errorData.error}`);
     }
     const newCar = await response.json();
     return newCar;
@@ -59,12 +58,10 @@ export const updateCustomCar = async (id, carData) => {
       },
       body: JSON.stringify(carData),
     });
-
     if (!response.ok) {
       const errorData = await response.json();
       throw new Error(`Network response was not ok: ${errorData.error}`);
     }
-
     const updatedCar = await response.json();
     return updatedCar;
   } catch (error) {
@@ -75,13 +72,14 @@ export const updateCustomCar = async (id, carData) => {
 
 export const deleteCustomCar = async (id) => {
   try {
-    const response = await fetch(`${API_URL}/${id}`, {
+    const response = await fetch(`/api/customcars/${id}`, {
       method: 'DELETE',
     });
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      const errorData = await response.json();
+      throw new Error(`Network response was not ok: ${errorData.error}`);
     }
-    return true;
+    return;
   } catch (error) {
     console.error('Error deleting custom car:', error);
     throw error;
