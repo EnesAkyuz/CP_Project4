@@ -1,10 +1,9 @@
 // client/src/pages/CreateCar.jsx
-
 import React, { useState, useEffect } from 'react';
 import { fetchOptionsByCategory } from '../services/OptionsAPI';
 import { createCustomCar } from '../services/CustomCarsAPI';
-import OptionModal from './OptionModal.jsx'; // Import here
-import { validateIncompatibleOptions } from '../utilities/validation'; // Ensure this function exists
+import OptionModal from "../pages/OptionModal.jsx";
+import { validateIncompatibleOptions } from '../utilities/validation';
 
 const CreateCar = () => {
   const [isConvertible, setIsConvertible] = useState(false);
@@ -80,7 +79,7 @@ const CreateCar = () => {
     e.preventDefault();
 
     // Validate incompatible options
-    const validationError = validateIncompatibleOptions(selectedOptions, isConvertible);
+    const validationError = await validateIncompatibleOptions(selectedOptions, isConvertible);
     if (validationError) {
       setErrorMessage(validationError);
       return;
@@ -102,6 +101,7 @@ const CreateCar = () => {
         interior_id: null,
       });
       setTotalPrice(0);
+      setErrorMessage('');
     } catch (error) {
       console.error('Error creating car:', error);
       setErrorMessage('Failed to create car.');

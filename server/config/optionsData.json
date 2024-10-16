@@ -1,51 +1,258 @@
 [
-    {
-      "category": "Exterior",
-      "name": "Red",
-      "price": 500,
-      "image_url": "/images/exterior/red.jpg",
-      "is_convertible_only": false,
-      "is_non_convertible_only": false
-    },
-    {
-      "category": "Exterior",
-      "name": "Blue",
-      "price": 500,
-      "image_url": "/images/exterior/blue.jpg",
-      "is_convertible_only": false,
-      "is_non_convertible_only": false
-    },
-    {
-      "category": "Roof",
-      "name": "Panoramic Sunroof",
-      "price": 1500,
-      "image_url": "/images/roof/panoramic_sunroof.jpg",
-      "is_convertible_only": false,
-      "is_non_convertible_only": true
-    },
-    {
-      "category": "Roof",
-      "name": "Soft Top",
-      "price": 2000,
-      "image_url": "/images/roof/soft_top.jpg",
-      "is_convertible_only": true,
-      "is_non_convertible_only": false
-    },
-    {
-      "category": "Wheels",
-      "name": "18-inch Alloy",
-      "price": 800,
-      "image_url": "/images/wheels/18_alloy.jpg",
-      "is_convertible_only": false,
-      "is_non_convertible_only": false
-    },
-    {
-      "category": "Interior",
-      "name": "Leather Seats",
-      "price": 1200,
-      "image_url": "/images/interior/leather_seats.jpg",
-      "is_convertible_only": false,
-      "is_non_convertible_only": false
-    }
-  ]
-  
+  {
+    "category": "Exterior",
+    "name": "Red",
+    "price": 500,
+    "image_url": "/images/exterior/red.jpg",
+    "is_convertible_only": false,
+    "is_non_convertible_only": false
+  },
+  {
+    "category": "Exterior",
+    "name": "Blue",
+    "price": 500,
+    "image_url": "/images/exterior/blue.jpg",
+    "is_convertible_only": false,
+    "is_non_convertible_only": false
+  },
+  {
+    "category": "Exterior",
+    "name": "Black",
+    "price": 600,
+    "image_url": "/images/exterior/black.jpg",
+    "is_convertible_only": false,
+    "is_non_convertible_only": false
+  },
+  {
+    "category": "Exterior",
+    "name": "White",
+    "price": 600,
+    "image_url": "/images/exterior/white.jpg",
+    "is_convertible_only": false,
+    "is_non_convertible_only": false
+  },
+  {
+    "category": "Exterior",
+    "name": "Silver",
+    "price": 700,
+    "image_url": "/images/exterior/silver.jpg",
+    "is_convertible_only": false,
+    "is_non_convertible_only": false
+  },
+  {
+    "category": "Exterior",
+    "name": "Green",
+    "price": 550,
+    "image_url": "/images/exterior/green.jpg",
+    "is_convertible_only": false,
+    "is_non_convertible_only": false
+  },
+  {
+    "category": "Exterior",
+    "name": "Yellow",
+    "price": 650,
+    "image_url": "/images/exterior/yellow.jpg",
+    "is_convertible_only": false,
+    "is_non_convertible_only": false
+  },
+  {
+    "category": "Exterior",
+    "name": "Orange",
+    "price": 650,
+    "image_url": "/images/exterior/orange.jpg",
+    "is_convertible_only": false,
+    "is_non_convertible_only": false
+  },
+  {
+    "category": "Roof",
+    "name": "Panoramic Sunroof",
+    "price": 1500,
+    "image_url": "/images/roof/panoramic_sunroof.jpg",
+    "is_convertible_only": false,
+    "is_non_convertible_only": true
+  },
+  {
+    "category": "Roof",
+    "name": "Soft Top",
+    "price": 2000,
+    "image_url": "/images/roof/soft_top.jpg",
+    "is_convertible_only": true,
+    "is_non_convertible_only": false
+  },
+  {
+    "category": "Roof",
+    "name": "Hard Top",
+    "price": 1800,
+    "image_url": "/images/roof/hard_top.jpg",
+    "is_convertible_only": true,
+    "is_non_convertible_only": false
+  },
+  {
+    "category": "Roof",
+    "name": "Moonroof",
+    "price": 1600,
+    "image_url": "/images/roof/moonroof.jpg",
+    "is_convertible_only": false,
+    "is_non_convertible_only": true
+  },
+  {
+    "category": "Roof",
+    "name": "No Roof",
+    "price": 0,
+    "image_url": "/images/roof/no_roof.jpg",
+    "is_convertible_only": true,
+    "is_non_convertible_only": false
+  },
+  {
+    "category": "Roof",
+    "name": "Glass Roof",
+    "price": 1700,
+    "image_url": "/images/roof/glass_roof.jpg",
+    "is_convertible_only": false,
+    "is_non_convertible_only": false
+  },
+  {
+    "category": "Roof",
+    "name": "Solar Roof",
+    "price": 2200,
+    "image_url": "/images/roof/solar_roof.jpg",
+    "is_convertible_only": false,
+    "is_non_convertible_only": true
+  },
+  {
+    "category": "Roof",
+    "name": "Carbon Fiber Roof",
+    "price": 2500,
+    "image_url": "/images/roof/carbon_fiber_roof.jpg",
+    "is_convertible_only": false,
+    "is_non_convertible_only": false
+  },
+  {
+    "category": "Wheels",
+    "name": "18-inch Alloy",
+    "price": 800,
+    "image_url": "/images/wheels/18_alloy.jpg",
+    "is_convertible_only": false,
+    "is_non_convertible_only": false
+  },
+  {
+    "category": "Wheels",
+    "name": "19-inch Alloy",
+    "price": 900,
+    "image_url": "/images/wheels/19_alloy.jpg",
+    "is_convertible_only": false,
+    "is_non_convertible_only": false
+  },
+  {
+    "category": "Wheels",
+    "name": "20-inch Alloy",
+    "price": 1000,
+    "image_url": "/images/wheels/20_alloy.jpg",
+    "is_convertible_only": false,
+    "is_non_convertible_only": false
+  },
+  {
+    "category": "Wheels",
+    "name": "18-inch Steel",
+    "price": 700,
+    "image_url": "/images/wheels/18_steel.jpg",
+    "is_convertible_only": false,
+    "is_non_convertible_only": false
+  },
+  {
+    "category": "Wheels",
+    "name": "17-inch Alloy",
+    "price": 600,
+    "image_url": "/images/wheels/17_alloy.jpg",
+    "is_convertible_only": false,
+    "is_non_convertible_only": false
+  },
+  {
+    "category": "Wheels",
+    "name": "19-inch Chrome",
+    "price": 1100,
+    "image_url": "/images/wheels/19_chrome.jpg",
+    "is_convertible_only": false,
+    "is_non_convertible_only": false
+  },
+  {
+    "category": "Wheels",
+    "name": "20-inch Chrome",
+    "price": 1200,
+    "image_url": "/images/wheels/20_chrome.jpg",
+    "is_convertible_only": false,
+    "is_non_convertible_only": false
+  },
+  {
+    "category": "Wheels",
+    "name": "21-inch Sport",
+    "price": 1300,
+    "image_url": "/images/wheels/21_sport.jpg",
+    "is_convertible_only": false,
+    "is_non_convertible_only": false
+  },
+  {
+    "category": "Interior",
+    "name": "Leather Seats",
+    "price": 1200,
+    "image_url": "/images/interior/leather_seats.jpg",
+    "is_convertible_only": false,
+    "is_non_convertible_only": false
+  },
+  {
+    "category": "Interior",
+    "name": "Fabric Seats",
+    "price": 800,
+    "image_url": "/images/interior/fabric_seats.jpg",
+    "is_convertible_only": false,
+    "is_non_convertible_only": false
+  },
+  {
+    "category": "Interior",
+    "name": "Suede Seats",
+    "price": 1000,
+    "image_url": "/images/interior/suede_seats.jpg",
+    "is_convertible_only": false,
+    "is_non_convertible_only": false
+  },
+  {
+    "category": "Interior",
+    "name": "Heated Seats",
+    "price": 1300,
+    "image_url": "/images/interior/heated_seats.jpg",
+    "is_convertible_only": false,
+    "is_non_convertible_only": false
+  },
+  {
+    "category": "Interior",
+    "name": "Cooled Seats",
+    "price": 1400,
+    "image_url": "/images/interior/cooled_seats.jpg",
+    "is_convertible_only": false,
+    "is_non_convertible_only": false
+  },
+  {
+    "category": "Interior",
+    "name": "Massaging Seats",
+    "price": 1600,
+    "image_url": "/images/interior/massaging_seats.jpg",
+    "is_convertible_only": false,
+    "is_non_convertible_only": false
+  },
+  {
+    "category": "Interior",
+    "name": "Sports Seats",
+    "price": 1500,
+    "image_url": "/images/interior/sports_seats.jpg",
+    "is_convertible_only": false,
+    "is_non_convertible_only": false
+  },
+  {
+    "category": "Interior",
+    "name": "Luxury Seats",
+    "price": 1700,
+    "image_url": "/images/interior/luxury_seats.jpg",
+    "is_convertible_only": false,
+    "is_non_convertible_only": false
+  }
+]

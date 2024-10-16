@@ -1,4 +1,5 @@
 // server/controllers/customCarsController.js
+
 import { pool } from '../config/database.js';
 
 export const getAllCustomCars = async (req, res) => {
@@ -57,7 +58,7 @@ export const getCustomCarById = async (req, res) => {
 export const createCustomCar = async (req, res) => {
   const {
     name,
-    isConvertible,
+    is_convertible,
     exterior_id,
     roof_id,
     wheels_id,
@@ -65,8 +66,6 @@ export const createCustomCar = async (req, res) => {
   } = req.body;
 
   try {
-    // Validate incompatible options here (more on this in Step 8)
-
     // Calculate total price
     const priceResult = await pool.query(
       `
@@ -88,7 +87,7 @@ export const createCustomCar = async (req, res) => {
       `,
       [
         name,
-        isConvertible,
+        is_convertible,
         exterior_id,
         roof_id,
         wheels_id,
@@ -108,7 +107,7 @@ export const updateCustomCar = async (req, res) => {
   const { id } = req.params;
   const {
     name,
-    isConvertible,
+    is_convertible,
     exterior_id,
     roof_id,
     wheels_id,
@@ -116,8 +115,6 @@ export const updateCustomCar = async (req, res) => {
   } = req.body;
 
   try {
-    // Validate incompatible options here
-
     // Calculate total price
     const priceResult = await pool.query(
       `
@@ -145,7 +142,7 @@ export const updateCustomCar = async (req, res) => {
       `,
       [
         name,
-        isConvertible,
+        is_convertible,
         exterior_id,
         roof_id,
         wheels_id,
@@ -162,7 +159,7 @@ export const updateCustomCar = async (req, res) => {
     res.status(200).json(result.rows[0]);
   } catch (error) {
     console.error('Error updating custom car:', error);
-    res.status(500).json({ error: 'Failed to update custom car' });
+    res.status(500).json({ error: 'Failed to update custom car.', details: error.message });
   }
 };
 

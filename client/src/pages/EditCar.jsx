@@ -1,8 +1,11 @@
 // client/src/pages/EditCar.jsx
+
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { fetchCustomCarById, updateCustomCar } from '../services/CustomCarsAPI';
 import { fetchOptionsByCategory } from '../services/OptionsAPI';
+import OptionModal from './OptionModal';
+import { validateIncompatibleOptions } from '../utilities/validation';
 
 const EditCar = () => {
   const { id } = useParams();
@@ -16,6 +19,7 @@ const EditCar = () => {
   });
   const [errorMessage, setErrorMessage] = useState('');
   const [showOptionModal, setShowOptionModal] = useState(null);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
     const getCarAndOptions = async () => {
@@ -39,10 +43,40 @@ const EditCar = () => {
     getCarAndOptions();
   }, [id]);
 
-  if (!carData) return <p>Loading...</p>;
+  useEffect(() => {
+    if (!carData) return; // Ensure carData is not null
+
+    const calculateTotalPrice = () => {
+      let price = 0;
+      const optionIds = [
+        carData.exterior_id,
+        carData.roof_id,
+        carData.wheels_id,
+        carData.interior_id,
+      ];
+
+      optionIds.forEach((optionId) => {
+        const option = Object.values(options)
+          .flat()
+          .find((opt) => opt.id === optionId);
+        if (option) {
+          price += parseFloat(option.price);
+        }
+      });
+
+      setTotalPrice(price);
+    };
+
+    calculateTotalPrice();
+  }, [carData, options]); // Updated dependency array
+
+  if (!carData) {
+    return <p>Loading...</p>;
+  }
 
   const handleOptionSelect = (category, optionId) => {
     setCarData({ ...carData, [`${category.toLowerCase()}_id`]: optionId });
+    setShowOptionModal(null); // Close the modal after selection
   };
 
   const toggleOptionModal = (category) => {
@@ -53,14 +87,17 @@ const EditCar = () => {
     e.preventDefault();
 
     // Validate incompatible options
-    const validationError = validateIncompatibleOptions(carData, carData.is_convertible);
+    const validationError = await validateIncompatibleOptions(carData, carData.is_convertible);
     if (validationError) {
       setErrorMessage(validationError);
       return;
     }
 
     try {
-      await updateCustomCar(id, carData);
+      await updateCustomCar(id, {
+        ...carData,
+        total_price: totalPrice, // Include total_price if necessary
+      });
       alert('Car updated successfully!');
       navigate(`/customcars/${id}`);
     } catch (error) {
@@ -93,10 +130,11 @@ const EditCar = () => {
 
         <div className="options-section">
           {['Exterior', 'Roof', 'Wheels', 'Interior'].map((category) => (
-            <div key={category}>
+            <div key={category} className="option-category">
               <button
                 type="button"
                 onClick={() => toggleOptionModal(category)}
+                className="category-button"
               >
                 {category}
               </button>
@@ -115,12 +153,12 @@ const EditCar = () => {
         </div>
 
         <div className="price-counter">
-          <p>Total Price: ${carData.total_price.toFixed(2)}</p>
+          <p>Total Price: ${totalPrice.toFixed(2)}</p>
         </div>
 
         {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-        <button type="submit">Update</button>
+        <button type="submit" className="update-button">Update</button>
       </form>
     </div>
   );

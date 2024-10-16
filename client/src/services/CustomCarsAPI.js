@@ -52,16 +52,19 @@ export const createCustomCar = async (carData) => {
 
 export const updateCustomCar = async (id, carData) => {
   try {
-    const response = await fetch(`${API_URL}/${id}`, {
+    const response = await fetch(`/api/customcars/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(carData),
     });
+
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      const errorData = await response.json();
+      throw new Error(`Network response was not ok: ${errorData.error}`);
     }
+
     const updatedCar = await response.json();
     return updatedCar;
   } catch (error) {
