@@ -1,0 +1,99 @@
+/* client/src/css/EditCar.css */
+
+/* Main container for editing the car */
+.edit-car-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 1000px;
+    color: white;
+  }
+  
+  .edit-car-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .edit-car-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .edit-car-form label {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+  
+  .edit-car-form input[type="text"],
+  .edit-car-form input[type="number"],
+  .edit-car-form select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+  }
+  
+  .edit-car-form input:focus,
+  .edit-car-form select:focus {
+    outline: none;
+    border-color: #b30000;
+  }
+  
+  /* Save button */
+  .save-button {
+    background-color: #820000;
+    color: white;
+    font-weight: bold;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: center;
+  }
+  
+  .save-button:hover {
+    background-color: #b30000;
+  }
+  
+  /* Edit options */
+  .edit-options-section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .edit-option-category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .edit-option-category button {
+    background-color: #820000;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .edit-option-category button:hover {
+    background-color: #b30000;
+  }
+  

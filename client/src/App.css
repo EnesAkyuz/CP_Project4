@@ -1,12 +1,42 @@
+/* Global App styles */
 .app {
-    background: url('./assets/background.jpg');
-    background-repeat: no-repeat;
+    background: url('./assets/background.jpg') no-repeat center center fixed;
     background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    padding-bottom: 50px;
     width: 100vw;
     height: 100vh;
     overflow-y: scroll;
     overflow-x: hidden;
-    padding-bottom: 50px;
-}
+  }
+  
+  nav {
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100vw;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Price box at the bottom left */
+  .price-box {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #820000;
+    color: white;
+    font-size: 1.5rem;
+    padding: 15px 30px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+  }
+  
+  .price-box img {
+    width: 25px;
+    margin-right: 10px;
+  }
+  

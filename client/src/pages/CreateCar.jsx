@@ -6,6 +6,7 @@ import { createCustomCar } from '../services/CustomCarsAPI';
 import { fetchOptionsByCategory } from '../services/OptionsAPI';
 import OptionModal from '../components/OptionModal';
 import { validateIncompatibleOptions } from '../utilities/validation';
+import "../css/CreateCar.css";
 
 const CreateCar = () => {
   const [carName, setCarName] = useState('');

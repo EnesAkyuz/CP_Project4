@@ -6,6 +6,7 @@ import { fetchCustomCarById, updateCustomCar } from '../services/CustomCarsAPI';
 import { fetchOptionsByCategory } from '../services/OptionsAPI';
 import OptionModal from '../components/OptionModal';
 import { validateIncompatibleOptions } from '../utilities/validation';
+import "../css/EditCar.css"
 
 const EditCar = () => {
   const { id } = useParams();

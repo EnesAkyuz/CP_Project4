@@ -1,0 +1,93 @@
+/* client/src/css/CreateCar.css */
+
+/* Main car customization container */
+.create-car-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    border-radius: 10px;
+    margin: 20px;
+    color: white;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .create-car-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Customization options buttons (Exterior, Roof, etc.) */
+  .options-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 1000px;
+  }
+  
+  .category-button {
+    background-color: #820000;
+    color: white;
+    font-weight: bold;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .category-button:hover {
+    background-color: #b30000;
+  }
+  
+  /* Convertible checkbox */
+  label {
+    color: white;
+    font-size: 1.2rem;
+    margin: 15px 0;
+  }
+  
+  input[type="checkbox"] {
+    transform: scale(1.5);
+    margin-left: 10px;
+  }
+  
+  /* Car name input */
+  input[type="text"] {
+    padding: 10px;
+    font-size: 1rem;
+    width: 300px;
+    margin: 15px 0;
+    border: 2px solid white;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+  }
+  
+  input[type="text"]:focus {
+    outline: none;
+    border-color: #b30000;
+  }
+  
+  /* Create button */
+  .create-button {
+    background-color: #820000;
+    color: white;
+    font-weight: bold;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .create-button:hover {
+    background-color: #b30000;
+  }
+  
