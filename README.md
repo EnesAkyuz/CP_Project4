@@ -38,20 +38,21 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+https://github.com/user-attachments/assets/eedcbb56-a3c2-4f29-83dc-dfcfcd9b6642
 
-<!-- Replace this with whatever GIF tool you used! -->
+GIF created with Kap
 
-GIF created with ...  GIF tool here
+## Railway Screenshots
 
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+<img width="888" alt="Screenshot 2024-10-17 at 2 40 12 AM" src="https://github.com/user-attachments/assets/429a9c0f-b331-44fc-8c40-e57cc17e44ab">
+
+<img width="893" alt="Screenshot 2024-10-17 at 2 40 06 AM" src="https://github.com/user-attachments/assets/fdd51ba4-4ff1-4175-a8f9-eff969e04d0a">
+
+<img width="895" alt="Screenshot 2024-10-17 at 2 40 59 AM" src="https://github.com/user-attachments/assets/4d94227f-057a-4ef7-884b-6a7c40669aa4">
 
 ## Notes
 
-Describe any challenges encountered while building the app or any additional context you'd like to add.
+Implementing the options clashing part required a lot of thinking on the database side. I finally found a bit of a hacky solution where I had is_convertible_only and is_non_convertible_only columns so that I could display roofs and items that were compatible with certain types. Other than this, another issue was dealing with the datatypes since for some reason, I needed to constantly cast stuff I received from Railway to integers. Especially in the total money calculation it created a big mess. But overall, I implemented all features including the stretch one.
 
 ## License
 
