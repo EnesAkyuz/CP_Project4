@@ -40,6 +40,10 @@ const ViewAllCars = () => {
     navigate(`/edit/${id}`);
   };
 
+  const handleDetails = (id) => {
+    navigate(`/customcars/${id}`); // Navigate to CarDetails page
+  };
+
   return (
     <div className="view-all-cars-container">
       <h2>All Custom Cars</h2>
@@ -47,28 +51,43 @@ const ViewAllCars = () => {
       <div className="cars-grid">
         {customCars.map((car) => (
           <div key={car.id} className="car-card">
-            <h3>{car.name}</h3>
-            <p>Convertible: {car.is_convertible ? 'Yes' : 'No'}</p>
-            <p>Total Price: ${car.total_price.toFixed(2)}</p>
-            <div className="car-options">
-              <div className="option">
-                <img src={car.exterior_image} alt={car.exterior_name} />
-                <p>{car.exterior_name}</p>
-              </div>
-              <div className="option">
-                <img src={car.roof_image} alt={car.roof_name} />
-                <p>{car.roof_name}</p>
-              </div>
-              <div className="option">
-                <img src={car.wheels_image} alt={car.wheels_name} />
-                <p>{car.wheels_name}</p>
-              </div>
-              <div className="option">
-                <img src={car.interior_image} alt={car.interior_name} />
-                <p>{car.interior_name}</p>
+            {/* Column 1: Title and price */}
+            <div className="car-info">
+              <h3>{car.name}</h3>
+              <p className="car-price">
+                Total Price: <span>${car.total_price.toFixed(2)}</span>
+              </p>
+            </div>
+
+            {/* Column 2: Convertible and 2x2 grid */}
+            <div className="car-options-container">
+              <p>Convertible: {car.is_convertible ? 'Yes' : 'No'}</p>
+              <div className="car-options">
+                <div className="option">
+                  <img src={car.exterior_image} alt={car.exterior_name} />
+                  <p>{car.exterior_name}</p>
+                </div>
+                <div className="option">
+                  <img src={car.roof_image} alt={car.roof_name} />
+                  <p>{car.roof_name}</p>
+                </div>
+                <div className="option">
+                  <img src={car.wheels_image} alt={car.wheels_name} />
+                  <p>{car.wheels_name}</p>
+                </div>
+                <div className="option">
+                  <img src={car.interior_image} alt={car.interior_name} />
+                  <p>{car.interior_name}</p>
+                </div>
               </div>
             </div>
+
+            {/* Column 3: Details, Edit, and Delete buttons */}
             <div className="car-actions">
+              {/* Details button */}
+              <button onClick={() => handleDetails(car.id)} className="details-button">
+                Details
+              </button>
               <button onClick={() => handleEdit(car.id)} className="edit-button">
                 Edit
               </button>

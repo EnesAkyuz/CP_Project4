@@ -1,7 +1,7 @@
-// client/src/pages/CarDetails.jsx
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { fetchCustomCarById, deleteCustomCar } from '../services/CustomCarsAPI';
+import '../css/ViewCars.css'; // Reuse the ViewCars CSS
 
 const CarDetails = () => {
   const { id } = useParams();
@@ -35,15 +35,48 @@ const CarDetails = () => {
 
   return (
     <div className="car-details-container">
-      <h2>{car.name}</h2>
-      <p><strong>Price:</strong> ${car.total_price.toFixed(2)}</p>
-      <p><strong>Convertible:</strong> {car.is_convertible ? 'Yes' : 'No'}</p>
-      <p><strong>Exterior:</strong> {car.exterior_name}</p>
-      <p><strong>Roof:</strong> {car.roof_name}</p>
-      <p><strong>Wheels:</strong> {car.wheels_name}</p>
-      <p><strong>Interior:</strong> {car.interior_name}</p>
-      <Link to={`/edit/${car.id}`}>Edit</Link>
-      <button onClick={handleDelete}>Delete</button>
+      <div className="car-card">
+        {/* Column 1: Title and price */}
+        <div className="car-info">
+          <h3>{car.name}</h3>
+          <p className="car-price">
+            Total Price: <span>${car.total_price.toFixed(2)}</span>
+          </p>
+        </div>
+
+        {/* Column 2: Convertible and 2x2 grid */}
+        <div className="car-options-container">
+          <p>Convertible: {car.is_convertible ? 'Yes' : 'No'}</p>
+          <div className="car-options">
+            <div className="option">
+              <img src={car.exterior_image} alt={car.exterior_name} />
+              <p>{car.exterior_name}</p>
+            </div>
+            <div className="option">
+              <img src={car.roof_image} alt={car.roof_name} />
+              <p>{car.roof_name}</p>
+            </div>
+            <div className="option">
+              <img src={car.wheels_image} alt={car.wheels_name} />
+              <p>{car.wheels_name}</p>
+            </div>
+            <div className="option">
+              <img src={car.interior_image} alt={car.interior_name} />
+              <p>{car.interior_name}</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Column 3: Edit and delete buttons */}
+        <div className="car-actions">
+          <Link to={`/edit/${car.id}`} className="edit-button">
+            Edit
+          </Link>
+          <button onClick={handleDelete} className="delete-button">
+            Delete
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

@@ -12,7 +12,16 @@
     max-width: 1000px;
     color: white;
   }
-  
+
+  .price-counter {
+    background-color: rgba(255, 223, 0, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    color: #f7c14f;
+    font-weight: bold;
+  }
+
   .edit-car-container h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;

@@ -1,110 +1,197 @@
-/* client/src/css/ViewCars.css */
-
-/* Main container for viewing cars */
-.view-cars-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+.view-all-cars-container {
   padding: 20px;
 }
 
 h2 {
-  text-align: center;
   width: 100%;
-  margin-top: 18px;
-  margin-bottom: 18px;
+  text-align: center;
 }
 
-/* Car card styling */
-.car-card {
+.cars-grid {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 20px;
-  margin-left: 5%;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.car-card {
+  background: rgba(0, 0, 0, 0.85);
   border-radius: 10px;
-  border: 2px solid #b30000;
-  width: 90%;
-  margin-bottom: 20px;
-  transition: transform 0.3s ease-in-out;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; /* 3-column layout */
+  align-items: center;
+  width: 90%; /* Wider card */
+  max-width: 1000px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  position: relative;
+  color: white;
+  min-height: 200px; /* Ensure card stays wider than tall */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
 }
 
 .car-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* Make shadow stronger */
 }
-
-.car-card h3 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-}
-
-.car-card h3 img {
-  margin-right: 10px;
-  height: 35px;
-}
-
-.car-card-details {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.car-details-left, .car-details-right {
+.car-info {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: flex-start;
 }
 
-.car-details-left p, .car-details-right p {
-  margin: 5px 0;
-}
-
-.car-details-right {
-  text-align: right;
-}
-
-.car-details-left p {
-  display: flex;
-  align-items: center;
-  font-size: 1rem;
-}
-
-.car-details-left p img, .car-details-right p img {
-  margin-right: 8px;
-  height: 20px;
+h3 {
+  margin: 0;
 }
 
 .car-price {
-  display: flex;
-  align-items: center;
-  font-size: 1.8rem;
-  font-weight: bold;
-}
-
-.car-price img {
-  margin-right: 10px;
-  height: 30px;
-}
-
-/* Details button */
-.details-button {
-  background-color: #820000;
-  color: white;
-  font-weight: bold;
-  padding: 15px 30px;
-  font-size: 1rem;
-  border: none;
+  background-color: rgba(255, 223, 0, 0.2);
+  padding: 10px;
   border-radius: 5px;
+  font-size: 1.2rem;
+  color: #f7c14f;
+  font-weight: bold;
+}
+
+.car-options-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.car-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.car-card img {
+  width: 70px; /* Adjust image size */
+  height: 70px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.option p {
+  margin: 5px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 70px; /* Prevents text overflow */
+  text-align: center;
+}
+
+.car-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+
+.edit-button, .delete-button {
+  background-color: #c21807;
+  color: white;
+  padding: 10px 20px;
+  border: none;
   cursor: pointer;
-  transition: background-color 0.3s;
+  border-radius: 5px;
+  width: 120px; /* Uniform button size */
+  text-align: center;
+  font-size: 1rem;
+}
+
+.delete-button {
+  background-color: #8b0000;
+}
+
+.edit-button:hover, .delete-button:hover {
+  background-color: black;
+}
+
+.car-details-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: 100vh;
+}
+
+.car-card {
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 10px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; /* Use the same structure as in ViewCars */
+  align-items: center;
+  width: 90%;
+  max-width: 1000px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  color: white;
+  position: relative;
+}
+
+.car-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.option img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.car-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.edit-button, .delete-button {
+  background-color: #c21807;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.delete-button {
+  background-color: #8b0000;
+}
+
+.edit-button:hover, .delete-button:hover {
+  background-color: black;
+}
+
+.details-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100px;
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 10px;
 }
 
 .details-button:hover {
-  background-color: #b30000;
+  background-color: #0056b3;
 }

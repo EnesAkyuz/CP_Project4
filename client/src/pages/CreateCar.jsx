@@ -23,10 +23,12 @@ const CreateCar = () => {
     Wheels: [],
     Interior: [],
   });
+  const [totalPrice, setTotalPrice] = useState(0);  // New state for price calculation
   const [errorMessage, setErrorMessage] = useState('');
   const [showOptionModal, setShowOptionModal] = useState(null);
   const navigate = useNavigate();
 
+  // Fetch options when the component mounts and whenever 'isConvertible' changes
   useEffect(() => {
     const getOptions = async () => {
       try {
@@ -47,15 +49,44 @@ const CreateCar = () => {
     getOptions();
   }, [isConvertible]);
 
+  // Handle option selection
   const handleOptionSelect = (category, optionId) => {
     setSelectedOptions({ ...selectedOptions, [`${category.toLowerCase()}_id`]: optionId });
     setShowOptionModal(null); // Close the modal after selection
   };
 
+  // Toggle modal view for each category
   const toggleOptionModal = (category) => {
     setShowOptionModal(showOptionModal === category ? null : category);
   };
 
+  // Calculate the current total price based on selected options
+  useEffect(() => {
+    const calculateTotalPrice = () => {
+      let price = 0;
+      const optionIds = [
+        selectedOptions.exterior_id,
+        selectedOptions.roof_id,
+        selectedOptions.wheels_id,
+        selectedOptions.interior_id,
+      ];
+
+      optionIds.forEach((optionId) => {
+        const option = Object.values(options)
+          .flat()
+          .find((opt) => opt.id === optionId);
+        if (option) {
+          price += parseFloat(option.price);
+        }
+      });
+
+      setTotalPrice(price);  // Update the price state
+    };
+
+    calculateTotalPrice();
+  }, [selectedOptions, options]); // Updated dependency array
+
+  // Handle the form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -78,11 +109,12 @@ const CreateCar = () => {
         name: carName,
         is_convertible: isConvertible,
         ...selectedOptions,
+        total_price: totalPrice,
       };
 
       await createCustomCar(carData);
       alert('Car created successfully!');
-      navigate('/viewallcars');
+      navigate('/customcars');
     } catch (error) {
       console.error('Error creating car:', error);
       setErrorMessage('Failed to create car.');
@@ -92,6 +124,7 @@ const CreateCar = () => {
   return (
     <div className="create-car-container">
       <h2>Create a New Car</h2>
+
       <form onSubmit={handleSubmit}>
         <label>
           Car Name:
@@ -102,6 +135,7 @@ const CreateCar = () => {
             required
           />
         </label>
+
         <label>
           Convertible:
           <input
@@ -111,6 +145,7 @@ const CreateCar = () => {
           />
         </label>
 
+        {/* Display categories for option selection */}
         <div className="options-section">
           {['Exterior', 'Roof', 'Wheels', 'Interior'].map((category) => (
             <div key={category} className="option-category">
@@ -121,10 +156,12 @@ const CreateCar = () => {
               >
                 {category}
               </button>
+
+              {/* OptionModal for each category */}
               {showOptionModal === category && (
                 <OptionModal
                   category={category}
-                  options={options[category]} // Pass options to OptionModal
+                  options={options[category]} // Pass category-specific options to OptionModal
                   selectedOptionId={selectedOptions[`${category.toLowerCase()}_id`]}
                   onSelectOption={(optionId) => handleOptionSelect(category, optionId)}
                   onClose={() => setShowOptionModal(null)}
@@ -139,6 +176,11 @@ const CreateCar = () => {
 
         <button type="submit" className="create-button">Create</button>
       </form>
+
+      {/* Price Display at Bottom Left */}
+      <div className="price-display">
+        <span>💰 ${totalPrice.toFixed(2)}</span>
+      </div>
     </div>
   );
 };
