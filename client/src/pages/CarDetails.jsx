@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { fetchCustomCarById, deleteCustomCar } from '../services/CustomCarsAPI';
-import '../css/ViewCars.css'; // Reuse the ViewCars CSS
+import '../css/CarDetails.css'; // Reuse the ViewCars CSS
 
 const CarDetails = () => {
   const { id } = useParams();
@@ -38,7 +38,9 @@ const CarDetails = () => {
       <div className="car-card">
         {/* Column 1: Title and price */}
         <div className="car-info">
-          <h3>{car.name}</h3>
+          <h3>
+              {car.is_convertible ? '🏎 ' : '🚙 '} {car.name}
+          </h3>
           <p className="car-price">
             Total Price: <span>${car.total_price.toFixed(2)}</span>
           </p>

@@ -53,7 +53,9 @@ const ViewAllCars = () => {
           <div key={car.id} className="car-card">
             {/* Column 1: Title and price */}
             <div className="car-info">
-              <h3>{car.name}</h3>
+              <h3>
+                {car.is_convertible ? '🏎 ' : '🚙 '} {car.name}
+              </h3>
               <p className="car-price">
                 Total Price: <span>${car.total_price.toFixed(2)}</span>
               </p>
