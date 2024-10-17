@@ -3,7 +3,7 @@
     "category": "Exterior",
     "name": "Red",
     "price": 500,
-    "image_url": "/images/exterior/red.jpg",
+    "image_url": "https://htmlcolorcodes.com/assets/images/colors/red-color-solid-background-1920x1080.png",
     "is_convertible_only": false,
     "is_non_convertible_only": false
   },
@@ -11,7 +11,7 @@
     "category": "Exterior",
     "name": "Blue",
     "price": 500,
-    "image_url": "/images/exterior/blue.jpg",
+    "image_url": "https://htmlcolorcodes.com/assets/images/colors/blue-color-solid-background-1920x1080.png",
     "is_convertible_only": false,
     "is_non_convertible_only": false
   },
@@ -19,7 +19,7 @@
     "category": "Exterior",
     "name": "Black",
     "price": 600,
-    "image_url": "/images/exterior/black.jpg",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn7Rc10hoOkZbVbYWGMKkk8aCHOrxytvGm3w&s",
     "is_convertible_only": false,
     "is_non_convertible_only": false
   },
@@ -27,7 +27,7 @@
     "category": "Exterior",
     "name": "White",
     "price": 600,
-    "image_url": "/images/exterior/white.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/18/Color-white.JPG",
     "is_convertible_only": false,
     "is_non_convertible_only": false
   },
@@ -35,7 +35,7 @@
     "category": "Exterior",
     "name": "Silver",
     "price": 700,
-    "image_url": "/images/exterior/silver.jpg",
+    "image_url": "https://www.icolorpalette.com/download/solidcolorimage/a9b0b4_solid_color_background_icolorpalette.png",
     "is_convertible_only": false,
     "is_non_convertible_only": false
   },
@@ -43,7 +43,7 @@
     "category": "Exterior",
     "name": "Green",
     "price": 550,
-    "image_url": "/images/exterior/green.jpg",
+    "image_url": "https://htmlcolorcodes.com/assets/images/colors/neon-green-color-solid-background-1920x1080.png",
     "is_convertible_only": false,
     "is_non_convertible_only": false
   },
@@ -51,7 +51,7 @@
     "category": "Exterior",
     "name": "Yellow",
     "price": 650,
-    "image_url": "/images/exterior/yellow.jpg",
+    "image_url": "https://img.freepik.com/free-photo/magic-abstract-soft-colors-shining-yellow-gradient-studio-background_1258-71765.jpg",
     "is_convertible_only": false,
     "is_non_convertible_only": false
   },
@@ -59,7 +59,7 @@
     "category": "Exterior",
     "name": "Orange",
     "price": 650,
-    "image_url": "/images/exterior/orange.jpg",
+    "image_url": "https://images.artfulcloud.com/46287_1487850org.jpg",
     "is_convertible_only": false,
     "is_non_convertible_only": false
   },
@@ -67,7 +67,7 @@
     "category": "Roof",
     "name": "Panoramic Sunroof",
     "price": 1500,
-    "image_url": "/images/roof/panoramic_sunroof.jpg",
+    "image_url": "https://bluesky-cogcms-prodb.cdn.imgeng.in/media/izmm3gub/panoramic-sunroof.jpg?&width=1500&center=0.5,0.5&mode=crop&scale=both",
     "is_convertible_only": false,
     "is_non_convertible_only": true
   },
@@ -75,7 +75,7 @@
     "category": "Roof",
     "name": "Soft Top",
     "price": 2000,
-    "image_url": "/images/roof/soft_top.jpg",
+    "image_url": "https://static.wixstatic.com/media/adcca5_775fb0536e3e4a1184abc555ae07ae32~mv2.jpg/v1/fill/w_715,h_615,al_c,q_85,enc_auto/adcca5_775fb0536e3e4a1184abc555ae07ae32~mv2.jpg",
     "is_convertible_only": true,
     "is_non_convertible_only": false
   },
@@ -83,7 +83,7 @@
     "category": "Roof",
     "name": "Hard Top",
     "price": 1800,
-    "image_url": "/images/roof/hard_top.jpg",
+    "image_url": "https://overlandjunction.com/cdn/shop/products/KDL_4257_2000x_8a08129d-adc3-40ac-8672-ab1f755289ec_800x.jpg?v=1693579216",
     "is_convertible_only": true,
     "is_non_convertible_only": false
   },
@@ -91,7 +91,7 @@
     "category": "Roof",
     "name": "Moonroof",
     "price": 1600,
-    "image_url": "/images/roof/moonroof.jpg",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTegkoveCB0C0Op6FM8u13rtVg9Hdo84Z3o3A&s",
     "is_convertible_only": false,
     "is_non_convertible_only": true
   },
@@ -99,7 +99,7 @@
     "category": "Roof",
     "name": "No Roof",
     "price": 0,
-    "image_url": "/images/roof/no_roof.jpg",
+    "image_url": "https://media.cnn.com/api/v1/images/stellar/prod/191112144001-01-mclaren-elva.jpg?q=w_1110,c_fill",
     "is_convertible_only": true,
     "is_non_convertible_only": false
   },
@@ -107,7 +107,7 @@
     "category": "Roof",
     "name": "Glass Roof",
     "price": 1700,
-    "image_url": "/images/roof/glass_roof.jpg",
+    "image_url": "https://static0.carbuzzimages.com/wordpress/wp-content/uploads/gallery-images/original/1118000/600/1118600.jpg",
     "is_convertible_only": false,
     "is_non_convertible_only": false
   },
@@ -115,7 +115,7 @@
     "category": "Roof",
     "name": "Solar Roof",
     "price": 2200,
-    "image_url": "/images/roof/solar_roof.jpg",
+    "image_url": "https://img.industryweek.com/files/base/ebm/industryweek/image/2019/04/industryweek_22624_prius_solar_roof_t_0.png?auto=format,compress&fit=crop&q=45&h=356&height=356&w=640&width=640",
     "is_convertible_only": false,
     "is_non_convertible_only": true
   },
@@ -123,7 +123,7 @@
     "category": "Roof",
     "name": "Carbon Fiber Roof",
     "price": 2500,
-    "image_url": "/images/roof/carbon_fiber_roof.jpg",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRDtBcF35NwSqmMrFMFwfJEN7YG9O9iVm2rw&s",
     "is_convertible_only": false,
     "is_non_convertible_only": false
   },
@@ -131,7 +131,7 @@
     "category": "Wheels",
     "name": "18-inch Alloy",
     "price": 800,
-    "image_url": "/images/wheels/18_alloy.jpg",
+    "image_url": "https://www.coxmotorparts.co.uk/wp-content/uploads/2024/04/LUNICA-LDP-SIDE.jpg",
     "is_convertible_only": false,
     "is_non_convertible_only": false
   },
@@ -139,7 +139,7 @@
     "category": "Wheels",
     "name": "19-inch Alloy",
     "price": 900,
-    "image_url": "/images/wheels/19_alloy.jpg",
+    "image_url": "https://premierwheelsonline.co.uk/cdn/shop/products/SCF-B-GBBB1_95c44ee2-7575-402f-898c-db64ad7ef2df_600x.jpg?v=1650867331",
     "is_convertible_only": false,
     "is_non_convertible_only": false
   },
@@ -147,7 +147,7 @@
     "category": "Wheels",
     "name": "20-inch Alloy",
     "price": 1000,
-    "image_url": "/images/wheels/20_alloy.jpg",
+    "image_url": "https://image.made-in-china.com/2f0j00jwlWhnoKGSkU/Automotive-Parts-14-20-Inch-Full-Size-Car-Alloy-Wheels.webp",
     "is_convertible_only": false,
     "is_non_convertible_only": false
   },
@@ -155,7 +155,7 @@
     "category": "Wheels",
     "name": "18-inch Steel",
     "price": 700,
-    "image_url": "/images/wheels/18_steel.jpg",
+    "image_url": "https://cdn11.bigcommerce.com/s-1gfd17pa/images/stencil/1280x1280/products/659840/1910430/WEB_X48518__32995.1723657985.png?c=2",
     "is_convertible_only": false,
     "is_non_convertible_only": false
   },
@@ -163,7 +163,7 @@
     "category": "Wheels",
     "name": "17-inch Alloy",
     "price": 600,
-    "image_url": "/images/wheels/17_alloy.jpg",
+    "image_url": "https://s.alicdn.com/@sc04/kf/Hc27b7401f6924610a793f881770348d1B.png_720x720q50.png",
     "is_convertible_only": false,
     "is_non_convertible_only": false
   },
@@ -171,7 +171,7 @@
     "category": "Wheels",
     "name": "19-inch Chrome",
     "price": 1100,
-    "image_url": "/images/wheels/19_chrome.jpg",
+    "image_url": "https://i.ebayimg.com/images/g/v0EAAOSwo6tfj6pR/s-l1200.jpg",
     "is_convertible_only": false,
     "is_non_convertible_only": false
   },
@@ -179,7 +179,7 @@
     "category": "Wheels",
     "name": "20-inch Chrome",
     "price": 1200,
-    "image_url": "/images/wheels/20_chrome.jpg",
+    "image_url": "https://diablowheelsusa.com/wp-content/uploads/2021/07/Diablo-Angel_20_Chrome-Black-Inserts_Angle-carousel.jpg",
     "is_convertible_only": false,
     "is_non_convertible_only": false
   },
@@ -187,7 +187,7 @@
     "category": "Wheels",
     "name": "21-inch Sport",
     "price": 1300,
-    "image_url": "/images/wheels/21_sport.jpg",
+    "image_url": "https://www.elitecustomrims.com/cdn/shop/products/873-BML_621x.jpg?v=1665522891",
     "is_convertible_only": false,
     "is_non_convertible_only": false
   },
@@ -195,7 +195,7 @@
     "category": "Interior",
     "name": "Leather Seats",
     "price": 1200,
-    "image_url": "/images/interior/leather_seats.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/81QonsMl7tL._AC_UF894,1000_QL80_.jpg",
     "is_convertible_only": false,
     "is_non_convertible_only": false
   },
@@ -203,7 +203,7 @@
     "category": "Interior",
     "name": "Fabric Seats",
     "price": 800,
-    "image_url": "/images/interior/fabric_seats.jpg",
+    "image_url": "https://i5.walmartimages.com/seo/12PCS-GREY-VELOUR-FABRIC-CAR-SEAT-COVERS-GIFT-SET-NEW_103c7a57-392a-4e4f-9e5e-2ed25594d19d.9c6928f4763e892eed450132fd887b01.jpeg",
     "is_convertible_only": false,
     "is_non_convertible_only": false
   },
@@ -211,7 +211,7 @@
     "category": "Interior",
     "name": "Suede Seats",
     "price": 1000,
-    "image_url": "/images/interior/suede_seats.jpg",
+    "image_url": "https://autohq.com/images/products/superlamb_semi-custom-leatherette-suede-seat-cover_sand.jpg",
     "is_convertible_only": false,
     "is_non_convertible_only": false
   },
@@ -219,7 +219,7 @@
     "category": "Interior",
     "name": "Heated Seats",
     "price": 1300,
-    "image_url": "/images/interior/heated_seats.jpg",
+    "image_url": "https://static.wixstatic.com/media/f967c5_ebf6df78658541e4a8d9f505b3641b85.jpg/v1/fit/w_2500,h_1330,al_c/f967c5_ebf6df78658541e4a8d9f505b3641b85.jpg",
     "is_convertible_only": false,
     "is_non_convertible_only": false
   },
@@ -227,7 +227,7 @@
     "category": "Interior",
     "name": "Cooled Seats",
     "price": 1400,
-    "image_url": "/images/interior/cooled_seats.jpg",
+    "image_url": "https://carfromjapan.com/wp-content/uploads/2021/08/Hyundai-Verna-Ventilated-Seats.jpg",
     "is_convertible_only": false,
     "is_non_convertible_only": false
   },
@@ -235,7 +235,7 @@
     "category": "Interior",
     "name": "Massaging Seats",
     "price": 1600,
-    "image_url": "/images/interior/massaging_seats.jpg",
+    "image_url": "https://www.carkeys.co.uk/media/24004/comfort-s-class.jpg?width=1020&mode=max",
     "is_convertible_only": false,
     "is_non_convertible_only": false
   },
@@ -243,7 +243,7 @@
     "category": "Interior",
     "name": "Sports Seats",
     "price": 1500,
-    "image_url": "/images/interior/sports_seats.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/717OxhH4nQL._AC_UF1000,1000_QL80_.jpg",
     "is_convertible_only": false,
     "is_non_convertible_only": false
   },
@@ -251,7 +251,7 @@
     "category": "Interior",
     "name": "Luxury Seats",
     "price": 1700,
-    "image_url": "/images/interior/luxury_seats.jpg",
+    "image_url": "https://images.squarespace-cdn.com/content/v1/5a09a654e5dd5bcfe00c5f3a/1637511207836-VCJ2QBS3C5Q0HQ7TV5ZI/21.jpg?format=1000w",
     "is_convertible_only": false,
     "is_non_convertible_only": false
   }
